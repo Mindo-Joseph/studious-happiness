@@ -37,14 +37,14 @@ function firstQuestion() {
         imageHeight: 300,
         imageAlt: 'Rando cute gif for waifu',
         confirmButtonText: CONFIG.introButton,
-    
+
         customClass: {
             content: 'swal-content'
-        
+
         }
     }).then(function() {
         $('.content').show(200);
-      
+
     })
 }
 
@@ -111,10 +111,8 @@ function textGenerate() {
 $('#yes').click(function() {
     Swal.fire({
         title: CONFIG.question,
-        html: true,
         width: 900,
         padding: '3em',
-        html: "<input type='text' class='form-control' id='txtReason' onmousemove=textGenerate()  placeholder='Kyuuuu bhayiii.. reason btaao ab tum'>",
         background: '#fff url("img/iput-bg.jpg")',
         backdrop: `
               rgba(0,0,123,0.4)
@@ -122,22 +120,6 @@ $('#yes').click(function() {
               left top
               no-repeat
             `,
-        confirmButtonColor: '#3085d6',
-        confirmButtonColor: '#fe8a71',
-        confirmButtonText: CONFIG.sendBtn
-    }).then((result) => {
-        if (result.value) {
-            Swal.fire({
-                width: 900,
-                confirmButtonText: CONFIG.btnAccept,
-        
-                title: CONFIG.messPop,
-                text: CONFIG.messDesc,
-                confirmButtonColor: '#83d0c9',
-                onClose: () => {
-                    window.location = CONFIG.redirect;
-                }
-            })
-        }
+
     })
 })
